@@ -189,6 +189,33 @@
             android:textSize="@dimen/button_size"/>
 
         <Button
+            android:id="@+id/buttonLParen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonEqual"
+            android:layout_align="@id/buttonClear"
+            android:text="("
+            android:textSize="35sp" />
+
+        <Button
+            android:id="@+id/buttonRParen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonEqual"
+            android:layout_alignLeft="@id/buttonZero"
+            android:text=")"
+            android:textSize="35sp" />
+
+        <Button
+            android:id="@+id/buttonMod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonEqual"
+            android:layout_alignLeft="@id/buttonEqual"
+            android:text="%"
+            android:textSize="35sp" />
+
+        <Button
             android:id="@+id/buttonClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
