@@ -12,17 +12,18 @@ import nyc.c4q.scientificcalculator.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    public ActivityMainBinding binding;
 
-    private static final char addition = '+';
-    private static final char subtraction = '-';
-    private static final char multiplication = '*';
-    private static final char division = '/';
-    private char calculations;
-    private double valueFirst = Double.NaN;
-    private double valueSecond = Double.NaN;
+    public static final char addition = '+';
+    public static final char subtraction = '-';
+    public static final char multiplication = '*';
+    public static final char division = '/';
+    public static final char mod = '%';
+    public char calculations;
+    public double valueFirst = Double.NaN;
+    public double valueSecond = Double.NaN;
 
-    private DecimalFormat decimalFormat;
+    public DecimalFormat decimalFormat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +110,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.buttonLParen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText((binding.editText.getText() + "("));
+            }
+        });
+
+        binding.buttonRParen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText((binding.editText.getText() + ")"));
+            }
+        });
+
+        binding.buttonMod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calculations = mod;
+                if (!Double.isNaN(valueFirst)) {
+                    binding.textView.setText(decimalFormat.format(valueFirst) + "%");
+                    binding.editText.setText(null);
+                }
+            }
+        });
+
         binding.buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         binding.buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
