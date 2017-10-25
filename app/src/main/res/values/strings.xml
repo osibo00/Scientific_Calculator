@@ -1,3 +1,42 @@
 <resources>
+    //TODO create resource id for layout strings
+
     <string name="app_name">ScientificCalculator</string>
+
+    <!---  Number buttons  -->
+    <string name="button_7">7</string>
+    <string name="button_8">8</string>
+    <string name="button_9">9</string>
+    <string name="button_4">4</string>
+    <string name="button_5">5</string>
+    <string name="button_6">6</string>
+    <string name="button_1">1</string>
+    <string name="button_2">2</string>
+    <string name="button_3">3</string>
+    <string name="button_0">0</string>
+
+    <!--- Operator buttons -->
+    <string name="decimal_operator">.</string>
+    <string name="percentile_operator">%</string>
+    <string name="equals_operator">=</string>
+    <string name="division_operator">/</string>
+    <string name="multiplication_operator">*</string>
+    <string name="addition_operator">+</string>
+    <string name="subtraction_operator">-</string>
+    <string name="clear_operator">C</string>
+
+
+    <!--- Scientific Calc. Buttons -->
+    <string name="sin_operator">sin</string>
+    <string name="cos_operator">cos</string>
+    <string name="tan_operator">tan</string>
+    <string name="rad_operator">rad</string>
+    <string name="deg_operator">deg</string>
+    <string name="log_operator">log</string>
+    <string name="exponent_operator">x^y</string>
+    <string name="squareroot_operator">√</string>
+    <string name="pi_operator">π</string>
+
+
+
 </resources>
