@@ -175,7 +175,7 @@
             android:layout_alignTop="@id/buttonEqual"
             android:layout_toEndOf="@id/buttonEqual"
             android:layout_alignParentRight="true"
-            android:text="+"
+            android:text="@string/plus_operator"
             android:textSize="@dimen/button_size"/>
 
         <Button
