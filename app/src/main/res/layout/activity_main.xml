@@ -178,6 +178,7 @@
             android:text="@string/addition_operator"
             android:textSize="@dimen/text_size"/>
 
+
         <Button
             android:id="@+id/buttonSubtract"
             android:layout_width="wrap_content"
@@ -193,8 +194,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/buttonDot"
+
             android:text="@string/left_parenthetical"
             android:textSize="@dimen/text_size" />
+
 
         <Button
             android:id="@+id/buttonRParen"
