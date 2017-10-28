@@ -1,5 +1,6 @@
 package nyc.c4q.scientificcalculator;
 
+import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

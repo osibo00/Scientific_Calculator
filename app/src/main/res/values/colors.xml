@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#66BB6A</color>
-    <color name="colorPrimaryDark">#1B5E20</color>
-    <color name="colorAccent">#1B5E20</color>
-    <color name="colorView">#B9F6CA</color>
-    <color name="colorText">#4CAF50</color>
+    <!--First Layout Color Scheme  -->
+    <color name="colorPrimary">#76D7C4</color>
+    <color name="colorPrimaryDark">#148F77</color>
+    <color name="colorAccent">#148F77</color>
+    <color name="colorView">#1ABC9C</color>
+    <color name="colorText">#0E6251</color>
+
+    <!--Second Layout Color Scheme -->
+   <color name="sc_Primary">#F48FB1</color>
+    <color name="sc_PrimaryDark">#EC407A</color>
+    <color name="sc_ColorAccent">#880E4F</color>
+    <color name="sc_ColorView">#C2185B</color>
+    <color name="sc_ColorText">#E91E63</color>
 </resources>
