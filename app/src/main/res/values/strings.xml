@@ -14,6 +14,9 @@
     <string name="button_2">2</string>
     <string name="button_3">3</string>
     <string name="button_0">0</string>
+    <string name="button_Lparen">(</string>
+    <string name="button_Rparen">)</string>
+
 
     <!--- Operator buttons -->
     <string name="decimal_operator">.</string>
@@ -24,18 +27,23 @@
     <string name="addition_operator">+</string>
     <string name="subtraction_operator">-</string>
     <string name="clear_operator">C</string>
+    <string name="modulo_operator">%</string>
+    <string name="e_operator">e</string>
 
 
     <!--- Scientific Calc. Buttons -->
     <string name="sin_operator">sin</string>
     <string name="cos_operator">cos</string>
     <string name="tan_operator">tan</string>
-    <string name="rad_operator">rad</string>
-    <string name="deg_operator">deg</string>
+    <string name="rad_operator">Rad</string>
+    <string name="deg_operator">Deg</string>
     <string name="log_operator">log</string>
     <string name="exponent_operator">x^y</string>
     <string name="squareroot_operator">√</string>
     <string name="pi_operator">π</string>
+    <string name="factorial_operator">x!</string>
+    <string name="inv_button">Inv</string>
+    <string name="in_operator">In</string>
 
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="button_size">35sp</dimen>
-    <dimen name="view_size">40sp</dimen>
+    <dimen name="button_size_land">12.5sp</dimen>
+    <dimen name="textview_size">40sp</dimen>
 </resources>
