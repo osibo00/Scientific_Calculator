@@ -52,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:onClick="numberLParen"
+                    android:onClick="leftParen"
                     android:text="@string/button_Lparen"
                     android:textSize="35sp" />
 
@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:onClick="@string/buttonRParen"
+                    android:onClick="rightParen"
                     android:text=")"
                     android:textSize="35sp" />
 
