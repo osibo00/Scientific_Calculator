@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberLParen"
-                    android:text="("
+                    android:text="@string/button_Lparen"
                     android:textSize="35sp" />
 
                 <Button
@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:onClick="numberRParen"
+                    android:onClick="@string/buttonRParen"
                     android:text=")"
                     android:textSize="35sp" />
 
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberMod"
-                    android:text="%"
+                    android:text="@string/modulo_operator"
                     android:textSize="35sp" />
 
                 <Button
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberClear"
-                    android:text="C"
+                    android:text="@string/clear_operator"
                     android:textSize="@dimen/button_size" />
 
             </LinearLayout>
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberSeven"
-                    android:text="7"
+                    android:text="@string/button_7"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -109,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberEight"
-                    android:text="8"
+                    android:text="@string/button_8"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberNine"
-                    android:text="9"
+                    android:text="@string/button_9"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberDivide"
-                    android:text="/"
+                    android:text="@string/division_operator"
                     android:textSize="@dimen/button_size" />
 
             </LinearLayout>
@@ -147,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberFour"
-                    android:text="4"
+                    android:text="@string/button_4"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberFive"
-                    android:text="5"
+                    android:text="@string/button_5"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -167,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberSix"
-                    android:text="6"
+                    android:text="@string/button_6"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -176,7 +176,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberMultiply"
-                    android:text="*"
+                    android:text="@string/multiplication_operator"
                     android:textSize="@dimen/button_size" />
 
             </LinearLayout>
@@ -196,7 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberOne"
-                    android:text="1"
+                    android:text="@string/button_1"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -206,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberTwo"
-                    android:text="2"
+                    android:text="@string/button_2"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -216,7 +216,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberThree"
-                    android:text="3"
+                    android:text="@string/button_3"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -225,7 +225,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberSubtract"
-                    android:text="-"
+                    android:text="@string/subtraction_operator"
                     android:textSize="@dimen/button_size" />
 
             </LinearLayout>
@@ -253,7 +253,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberZero"
-                    android:text="0"
+                    android:text="@string/button_0"
                     android:textSize="@dimen/button_size" />
 
                 <Button
@@ -262,7 +262,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="numberEqual"
-                    android:text="="
+                    android:text="@string/equals_operator"
                     android:textSize="@dimen/button_size" />
 
                 <Button

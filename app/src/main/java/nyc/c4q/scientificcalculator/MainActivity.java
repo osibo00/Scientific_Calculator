@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import net.objecthunter.exp4j.ExpressionBuilder;
+import net.objecthunter.exp4j.*;
 
 import nyc.c4q.scientificcalculator.databinding.ActivityMainBinding;
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public double valueSecond = Double.NaN;
 
     public DecimalFormat decimalFormat;
+    public String expression = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
+
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -49,51 +53,65 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberSeven(View view) {
+        expression += "7";
         binding.editText.setText((binding.editText.getText() + "7"));
     }
 
     public void numberEight(View view) {
+        expression += "8";
         binding.editText.setText((binding.editText.getText() + "8"));
     }
 
     public void numberNine(View view) {
+        expression += "9";
         binding.editText.setText((binding.editText.getText() + "9"));
     }
 
     public void numberFour(View view) {
+        expression += "4";
         binding.editText.setText((binding.editText.getText() + "4"));
     }
 
     public void numberFive(View view) {
+        expression += "5";
         binding.editText.setText((binding.editText.getText() + "5"));
     }
 
     public void numberSix(View view) {
+        expression += "6";
         binding.editText.setText((binding.editText.getText() + "6"));
     }
 
     public void numberOne(View view) {
+        expression += "1";
         binding.editText.setText((binding.editText.getText() + "1"));
     }
 
     public void numberTwo(View view) {
+        expression += "2";
         binding.editText.setText((binding.editText.getText() + "2"));
     }
 
     public void numberThree(View view) {
+        expression += "3";
         binding.editText.setText((binding.editText.getText() + "3"));
     }
 
     public void numberDot(View view) {
+        expression += ",";
         binding.editText.setText((binding.editText.getText() + "."));
     }
 
     public void numberZero(View view) {
+        expression += "0";
         binding.editText.setText((binding.editText.getText() + "0"));
     }
 
     public void numberEqual(View view) {
         unlimtedPower();
+        Expression exp = new ExpressionBuilder(expression).build();
+        double result = exp.evaluate();
+        binding.textView.setText(""+result);
         if (!Double.isNaN(valueSecond)) {
             try {
                 binding.textView.setText(binding.textView.getText().toString() + decimalFormat.format(valueSecond) + " = " + decimalFormat.format(valueFirst));
@@ -108,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberDivide(View view) {
+        expression += division;
         unlimtedPower();
         calculations = division;
         if (!Double.isNaN(valueFirst)) {
@@ -117,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberMultiply(View view) {
+        expression += multiplication;
         unlimtedPower();
         calculations = multiplication;
         if (!Double.isNaN(valueFirst)) {
@@ -126,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberAdd(View view) {
+        expression += addition;
         unlimtedPower();
         calculations = addition;
         if (!Double.isNaN(valueFirst)) {
@@ -135,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberSubtract(View view) {
+        expression += subtraction;
         unlimtedPower();
         calculations = subtraction;
         if (!Double.isNaN(valueFirst)) {
@@ -143,15 +165,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void numberLParen(View view) {
-        binding.editText.setText((binding.editText.getText() + "("));
-    }
-
-    public void numberRParen(View view) {
-        binding.editText.setText((binding.editText.getText() + ")"));
-    }
-
     public void numberMod(View view) {
+        expression += mod;
         calculations = mod;
         if (!Double.isNaN(valueFirst)) {
             binding.textView.setText(decimalFormat.format(valueFirst) + "%");
@@ -160,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberClear(View view) {
+        expression = "";
         if (binding.editText.getText().length() > 0) {
             CharSequence currentText = binding.editText.getText();
             binding.editText.setText(currentText.subSequence(0, currentText.length() - 1));
@@ -170,6 +186,80 @@ public class MainActivity extends AppCompatActivity {
             binding.textView.setText("");
         }
     }
+
+    public void sinOp(View view){
+        expression+= getString(R.string.sin_operator);
+        binding.textView.setText(expression);
+    }
+
+    public void cosOp(View view){
+        expression+= getString(R.string.cos_operator);
+        binding.textView.setText(expression);
+    }
+
+    public void tanOp(View view){
+        expression += getString(R.string.tan_operator);
+        binding.textView.setText(expression);
+    }
+
+    public void logOp(View view){
+        expression+= getString(R.string.log_operator);
+        binding.textView.setText(expression);
+    }
+
+    public void powOp(View view){
+        expression+= "^";
+        binding.textView.setText(expression);
+    }
+
+    public void leftParen(View view){
+        expression+= "(";
+        binding.textView.setText(expression);
+    }
+
+    public void rightParen(View view){
+        expression += ")";
+        binding.textView.setText(expression);
+    }
+
+    public void sqrtOp(View view){
+        expression += "sqrt";
+        binding.textView.setText(expression);
+    }
+
+    public void ansOp(View view){
+        int valueFirst = Integer.parseInt(binding.textView.getText().toString());
+        double d = valueFirst;
+    }
+
+    public void degOp(View view){
+        double d = valueFirst;
+        double deg = Math.toDegrees(d);
+        binding.textView.setText(""+deg);
+    }
+
+    public void radOp(View view){
+        double d = valueFirst;
+        double rad = Math.toRadians(d);
+        binding.textView.setText(""+rad);
+    }
+
+    public void piOp(View view){
+        double d = valueFirst;
+        double result = Math.PI * valueFirst;
+        binding.textView.setText(""+result);
+    }
+
+
+    public void factOp(View view){
+        double d = valueFirst;
+        double result = 1;
+        for(int i = 1;i <= d;i++ ){
+            result = result * i;
+        }
+        binding.textView.setText(""+result);
+    }
+
 
     private void unlimtedPower() {
         if (!Double.isNaN(valueFirst)) {
