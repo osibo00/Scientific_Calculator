@@ -108,13 +108,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberEqual(View view) {
-        unlimtedPower();
+        unlimitedPower();
         Expression exp = new ExpressionBuilder(expression).build();
         double result = exp.evaluate();
-        binding.textView.setText(""+result);
+        //binding.textView.setText(""+result);
         if (!Double.isNaN(valueSecond)) {
             try {
-                binding.textView.setText(binding.textView.getText().toString() + decimalFormat.format(valueSecond) + " = " + decimalFormat.format(valueFirst));
+                binding.textView.setText(binding.textView.getText().toString() + " " + decimalFormat.format(valueSecond) + " = " + decimalFormat.format(valueFirst));
                 valueFirst = Double.NaN;
                 calculations = '0';
             } catch (Exception e) {
@@ -127,49 +127,50 @@ public class MainActivity extends AppCompatActivity {
 
     public void numberDivide(View view) {
         expression += division;
-        unlimtedPower();
+        unlimitedPower();
         calculations = division;
         if (!Double.isNaN(valueFirst)) {
-            binding.textView.setText(decimalFormat.format(valueFirst) + "/");
+            binding.textView.setText(decimalFormat.format(valueFirst) + " /");
             binding.editText.setText(null);
         }
     }
 
     public void numberMultiply(View view) {
         expression += multiplication;
-        unlimtedPower();
+        unlimitedPower();
         calculations = multiplication;
         if (!Double.isNaN(valueFirst)) {
-            binding.textView.setText(decimalFormat.format(valueFirst) + "*");
+            binding.textView.setText(decimalFormat.format(valueFirst) + " *");
             binding.editText.setText(null);
         }
     }
 
     public void numberAdd(View view) {
         expression += addition;
-        unlimtedPower();
+        unlimitedPower();
         calculations = addition;
         if (!Double.isNaN(valueFirst)) {
-            binding.textView.setText(decimalFormat.format(valueFirst) + "+");
+            binding.textView.setText(decimalFormat.format(valueFirst) + " +");
             binding.editText.setText(null);
         }
     }
 
     public void numberSubtract(View view) {
         expression += subtraction;
-        unlimtedPower();
+        unlimitedPower();
         calculations = subtraction;
         if (!Double.isNaN(valueFirst)) {
-            binding.textView.setText(decimalFormat.format(valueFirst) + "-");
+            binding.textView.setText(decimalFormat.format(valueFirst) + " -");
             binding.editText.setText(null);
         }
     }
 
     public void numberMod(View view) {
         expression += mod;
+        unlimitedPower();
         calculations = mod;
         if (!Double.isNaN(valueFirst)) {
-            binding.textView.setText(decimalFormat.format(valueFirst) + "%");
+            binding.textView.setText(decimalFormat.format(valueFirst) + " %");
             binding.editText.setText(null);
         }
     }
@@ -261,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void unlimtedPower() {
+    private void unlimitedPower() {
         if (!Double.isNaN(valueFirst)) {
             valueSecond = Double.parseDouble(binding.editText.getText().toString());
             binding.editText.setText(null);
@@ -274,6 +275,8 @@ public class MainActivity extends AppCompatActivity {
                 valueFirst = this.valueFirst / valueSecond;
             } else if (calculations == multiplication) {
                 valueFirst = this.valueFirst * valueSecond;
+            } else if (calculations == mod) {
+                valueFirst = this.valueFirst % valueSecond;
             }
         } else {
             try {
