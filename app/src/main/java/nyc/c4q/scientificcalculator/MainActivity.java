@@ -5,6 +5,8 @@ import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
@@ -42,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-
 
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
@@ -113,17 +114,16 @@ public class MainActivity extends AppCompatActivity {
         double result = exp.evaluate();
         //binding.textView.setText(""+result);
         if (!Double.isNaN(valueSecond)) {
-            try {
-                binding.textView.setText(binding.textView.getText().toString() + " " + decimalFormat.format(valueSecond) + " = " + decimalFormat.format(valueFirst));
+            if (result != 0.0d)
+                binding.textView.setText(binding.textView.getText().toString() + " " + decimalFormat.format(valueSecond) + " = " + decimalFormat.format(result));
                 valueFirst = Double.NaN;
                 calculations = '0';
-            } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), "Not a number.", Toast.LENGTH_LONG).show();
-                binding.editText.setText(null);
-                binding.textView.setText(null);
-            }
+            } else {
+            binding.textView.setText(binding.textView.getText().toString() + " " + decimalFormat.format(valueSecond) + " = " + decimalFormat.format(valueFirst));
+            valueFirst = Double.NaN;
+            calculations = '0';
         }
-    }
+        }
 
     public void numberDivide(View view) {
         expression += division;
@@ -211,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
     public void powOp(View view){
         expression+= "^";
         binding.textView.setText(expression);
+        binding.editText.setText(null);
     }
 
     public void leftParen(View view){
@@ -229,8 +230,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ansOp(View view){
-        int valueFirst = Integer.parseInt(binding.textView.getText().toString());
-        double d = valueFirst;
+        String valueFirst = binding.textView.getText().toString();
+        binding.editText.setText(valueFirst);
     }
 
     public void degOp(View view){
